@@ -1,0 +1,5 @@
+https://kotlinlang.org/docs/collections-overview.html#map
+
+Kotlin OOP : 
+https://viblo.asia/p/lop-va-ke-thua-trong-kotlin-bWrZnvOQZxw
+
