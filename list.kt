@@ -38,4 +38,65 @@ fun main() {
     for (i in list.indices) {
         println(list[i])
     }
+    /**
+     * specific methods of list in Kotlin : binarySearch() 
+     * return index of element 
+     * if data type of element is primitive then dont have to define comparator 
+     * else define comparator : compareBy< data_type_of_element > (it.field_name_of_element) 
+     */
+    val productList = listOf(
+        Product("WebStorm", 49.0),
+        Product("AppCode", 99.0),
+        Product("DotTrace", 129.0),
+        Product("ReSharper", 149.0))
+
+    println(productList.binarySearch(Product("AppCode", 99.0), compareBy<Product> { it.price }.thenBy { it.name }))
+
+    //************************************************************************************************ */
+    /**
+     * find index 
+     */
+    val numbers = mutableListOf(1, 2, 3, 4)
+    println(numbers.indexOfFirst { it > 2})
+    println(numbers.indexOfLast{ it % 2 == 1})
+
+    /** 
+    * remove at index
+    * MutableList: A generic ordered collection of elements that supports adding and removing elements.
+    * You can modify a MutableList: change, remove, add... its elements. In a List you can only read them
+    */
+    val numbers = mutableListOf(1, 2, 3, 4, 3)    
+    numbers.removeAt(1)
+    println(numbers)
+
+    /* 
+    * 
+    */
+    val numbers = mutableListOf("one", "two", "three", "four")
+
+    numbers.sort()
+    println("Sort into ascending: $numbers")
+    numbers.sortDescending()
+    println("Sort into descending: $numbers")
+
+    numbers.sortBy { it.length }
+    println("Sort into ascending by length: $numbers")
+    numbers.sortByDescending { it.last() }
+    println("Sort into descending by the last letter: $numbers")
+
+    numbers.sortWith(compareBy<String> { it.length }.thenBy { it })
+    println("Sort by Comparator: $numbers")
+
+    numbers.shuffle()
+    println("Shuffle: $numbers")
+
+    numbers.reverse()
+    println("Reverse: $numbers")
+
+    /** 
+    * declare mutable list 
+    */
+    val mutabaleList = mutableListOf<String>()
+    
+
 }

@@ -22,6 +22,47 @@ fun main() {
     val numbersMap = mutableMapOf("one" to 1, "two" to 2)
     numbersMap.put("three", 3)
     numbersMap["one"] = 11
-
     println(numbersMap)
+
+
+    /** 
+     * Retrieve keys and values﻿
+     */
+    val numbersMap = mapOf("one" to 1, "two" to 2, "three" to 3)
+    println(numbersMap.get("one"))
+    println(numbersMap["one"])
+    println(numbersMap.getOrDefault("four", 10))
+    println(numbersMap["five"])  
+    println(numbersMap.keys)
+    println(numbersMap.values)
+
+    /*****
+     * Plus and minus operators﻿
+     */
+    println(numbersMap + Pair("four", 4))
+    println(numbersMap + Pair("one", 10))
+    numbersMap -= "two"
+    println(numbersMap)
+    numbersMap -= "five"             //doesn't remove anything
+    println(numbersMap)
+    println(numbersMap - setOf("two", "four","one")) // substract a set of keys 
+
+
+    /** **
+     * filter by key and value
+     */
+    val filteredKeysMap = numbersMap.filterKeys { it.endsWith("1") }
+    val filteredValuesMap = numbersMap.filterValues { it < 10 }
+
+    println(filteredKeysMap)
+    println(filteredValuesMap)
+
+    /**
+     * Remove entries
+     */
+    numbersMap.keys.remove("one")
+    println(numbersMap)
+    numbersMap.values.remove(3) // just remove the first entry with value 3
+    println(numbersMap)
+    
 }

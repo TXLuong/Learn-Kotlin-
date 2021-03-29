@@ -13,7 +13,9 @@ fun main() {
     val numbersBackwards = setOf(4,11,4, 3, 2, 1)
     println("The sets are equal: ${numbers == numbersBackwards}")
 
-    /**
+
+    /****************************************************************
+     * 
      * iterate a set 
      */
     val words = setOf("pen", "cup", "dog", "person",
@@ -48,6 +50,16 @@ fun main() {
 
     println()
 
+    /******
+     * union, intersect and substract
+     */
+    val numbers = setOf("one", "two", "three")
+    println(numbers union setOf("four", "five"))
+    println(setOf("four", "five") union numbers)
+
+    println(numbers intersect setOf("two", "one"))
+    println(numbers subtract setOf("three", "four"))
+    println(numbers subtract setOf("four", "three")) // same output
 
     
 }
